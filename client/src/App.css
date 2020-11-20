@@ -1,0 +1,163 @@
+* {
+    /* border: dashed red 1px; */
+}
+
+.header {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.App {
+    width: 650px;
+    margin: auto;
+}
+
+.nav {
+    width: 200px;
+    text-align: end;
+    margin: auto;
+}
+
+.header div {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.details {
+    width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.deletebtn {
+    height: 50px;
+    background-color: seagreen;
+    border: rgb(32, 109, 65) solid 2px;
+}
+
+.likebtn {
+    height: 50px;
+    background-color: seagreen;
+    border: rgb(32, 109, 65) solid 2px;
+}
+
+.likebx {
+    display: flex;
+    width: 500px;
+    justify-content: space-evenly;
+    padding: 25px;
+}
+
+.main {
+    /* width: 500px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: steelblue 3px solid;
+    padding: 20px;
+}
+
+table {
+    border: 1px solid #000000;
+    font-size: small;
+}
+table td,
+table.unstyledTable th {
+    border: 1px solid #aaaaaa;
+}
+table thead {
+    background: #dddddd;
+}
+table thead th {
+    font-weight: normal;
+    min-width: 80px;
+}
+table tfoot {
+    font-weight: bold;
+}
+
+.subbtn {
+    color: white;
+    background-color: steelblue;
+    border: rgb(35, 87, 129) solid 2px;
+    width: 150px;
+    height: 25px;
+    margin: 0px 120px;
+}
+
+textarea {
+  min-height: 0px;
+}
+
+.index {
+    display: flex;
+    width: 750px;
+    
+}
+
+.logreg {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-evenly; */
+    border: slategray 2px solid;
+    width: 300px;
+}
+
+.logreg p {
+    height: 61px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.logreg p label {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logreg p span {
+    color: red;
+    font-size: x-small;
+    /* align-self: flex-end; */
+}
+
+.logreg h5 {
+    font-weight: normal;
+    font-size: medium;
+}
+
+.devicecard {
+    height: 100px;
+    width: 100px;
+    border: solid 4px green;
+    display: flex;
+    margin: 20px;
+    justify-content: center;
+    background-color: rgb(0, 163, 0);
+
+}
+
+.cardarray {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.actions {
+    width: 600px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.actions div {
+    height: 100px;
+    width: 100px;
+    border: solid 4px green;
+    display: flex;
+    margin: 20px;
+    justify-content: center;
+    background-color: rgb(0, 163, 0);
+}
