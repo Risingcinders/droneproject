@@ -17,7 +17,7 @@ function App() {
         console.log("is this running?");
         socket.on("news", (data) => console.log(data))
         socket.on("Welcome", (data) => console.log(data));
-        
+
         return () => socket.disconnect(true);
     }, []);
 
@@ -45,3 +45,4 @@ function App() {
 }
 
 export default App;
+

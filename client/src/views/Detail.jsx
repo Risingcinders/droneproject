@@ -6,6 +6,8 @@ const io = require("socket.io-client");
 
 const Detail = (props) => {
     const [device, setdevice] = useState({});
+    const [statesObj, setStatesObj] = useState({});
+
 
     useEffect(() => {
         axios
@@ -15,23 +17,32 @@ const Detail = (props) => {
 
     const doRed = () => {
         axios.get("http://99.189.76.162/api/red")
+        .then(res => updateState(res.data.state, "red"))
     }
     const doGreen = () => {
         axios.get("http://99.189.76.162/api/green")
+        .then(res => updateState(res.data.state, "green"))
     }
     const doBlue = () => {
         axios.get("http://99.189.76.162/api/blue")
+        .then(res => updateState(res.data.state, "blue"))
     }
 
-    const [socket] = useState(() => io("192.168.1.239"));
+    const updateState = (state, key) => {
+        setStatesObj({...statesObj, [key] : state })
+    }
+
+
+
+    // const [socket] = useState(() => io("192.168.1.239"));
 
     // "http//99.189.76.162"
     
-    useEffect(() => {
-        console.log("is this running?");
-        socket.on("news", (data) => console.log(data))
-        return () => socket.disconnect(true);
-    }, []);
+    // useEffect(() => {
+    //     console.log("is this running?");
+    //     socket.on("news", (data) => console.log(data))
+    //     return () => socket.disconnect(true);
+    // }, []);
     
     return (
         <div className="main">
@@ -55,17 +66,13 @@ const Detail = (props) => {
                 Edit {device.name}
             </Link>
             <div className="actions">
-                <div onClick={doRed}>
+                <div className="red" style={statesObj.red ? {opacity:1} : {opacity:.5}} onClick={doRed}>
                     <h6>Red Light</h6>
                 </div>
-            </div>
-            <div className="actions">
-                <div onClick={doGreen}>
+                <div className="green" style={statesObj.green ? {opacity:1} : {opacity:.5}} onClick={doGreen}>
                     <h6>Green Light</h6>
                 </div>
-            </div>
-            <div className="actions">
-                <div onClick={doBlue}>
+                <div className="blue" style={statesObj.blue ? {opacity:1} : {opacity:.5}} onClick={doBlue}>
                     <h6>Blue Light</h6>
                 </div>
             </div>
