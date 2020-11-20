@@ -5,8 +5,6 @@ import LogoutBtn from "../components/Logoutbtn";
 
 const Links = (props) => {
 
-    console.log(props);
-
     return (
         <Fragment>
             {props.cant == "1" ? (  // needs new logged in logic

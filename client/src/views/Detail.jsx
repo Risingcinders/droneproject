@@ -32,6 +32,12 @@ const Detail = (props) => {
         setStatesObj({...statesObj, [key] : state })
     }
 
+    
+
+    useEffect(() => {
+        axios.get("http://99.189.76.162/api/states").then( res => setStatesObj(res))
+    }, [])
+
 
 
     // const [socket] = useState(() => io("192.168.1.239"));

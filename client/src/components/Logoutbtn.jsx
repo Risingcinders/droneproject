@@ -11,7 +11,6 @@ const LogoutBtn = () => {
                 withCredentials: true,
             })
             .then((res) => {
-                console.log("Logout Response:", res);
                 if (res.data.msg) {
                     navigate("/");
                 }
